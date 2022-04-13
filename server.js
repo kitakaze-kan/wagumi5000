@@ -49,6 +49,10 @@ client.on("interactionCreate", async (interaction) => {
         });
       } catch (e) {
         console.log(e);
+        await interaction.reply({
+          content: `ERROR:${JSON.stringify(e)}`,
+          ephemeral: true,
+        });
       }
       //reset_mint
     } else if (commandName === "reset_mint") {
